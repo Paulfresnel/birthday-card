@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Happy birthday project</title>
+  
+
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <h2>Hover over this card</h2>
+  <div class="body">
+    <div class="confetti"></div>
+    <div class="birthdayCard" onmouseenter="startConfetti()" onmouseleave="stopConfetti()">
+      <div class="cardFront">
+        <h3 class="happy">HAPPY BIRTHDAY!</h3>
+        <div class="balloons">
+          <div class="balloonOne"></div>
+          <div class="balloonTwo"></div>
+          <div class="balloonThree"></div>
+          <div class="balloonFour"></div>
+        </div>
+      </div>
+      <div class="cardInside">
+        <h3 class="back">HAPPY BIRTHDAY!</h3>
+        <p>Dear Polo,</p>
+        <p>Happy birthday mon coeur!! May all of your wishes come true.I love you the most ❤️ </p>
+        <p class="name">
+          Kitita
+          <button class="showImageButton" onclick="showProfileImage()">Click Me</button>
+          <input type="file" id="imageInput" style="display: none;">
+          <img id="profileImage" alt="Profile Image" class="profileImage" style="display: none;" src="https://previews.dropbox.com/p/thumb/ACIRgy0_rmOuID8DA6rkM3LpjAnBbk5i4OBqXYersVixwWVzKVb5tRI5G2-f0VT36zQ_LkzZF2k5aZ656K6miErdDG4inNW-VB6U4hpF5koUqgslK7-9H19wPzBIJFpKdNa-5XvjwDlEIOccYlE-BtyVo0CLoeUxl7hKWuEHEQIQOh1wsPKEcQ3ETAom7gvsNSzVEjS2Jev6jIuEn61R-iS_CTxWxwM2rSg6fEly0XzbF4gk-6nVk9ad9hSy6cXE0A4VMFKJRTkc2lIuB4Wr0MNklTxhcXFRlc5iYKmnuLJccG8JUmWVliJksFA34D7LKq2897wyRnUTNE0ZrV9v1q7e/p.jpeg">
+        <div class="game-container">
+          <button class="start-game-button" onclick="startGame()">
+            <img src="https://png2.cleanpng.com/sh/9cb30c77d60e119a457d54418ea7382a/L0KzQYi4UcI4N5c8T5GAYUHlcbS9UcdibmQ6TpCDMkC0QomCUcE2OWI8TqU5NEG4QIS9TwBvbz==/5a1bac617af356.8201289115117630415036.png" alt="" class="kiss-icon">
+          </button>
+        </div>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="falling-container"></div>
+  <div class="confetti-container"></div>
+  <script>
+    const profileImage = document.getElementById('profileImage');
+    const showImageButton = document.querySelector('.showImageButton');
+    const birthdayCard = document.querySelector('.birthdayCard');
+    document.querySelector('.start-game-button').addEventListener('click', startGame);
+    document.querySelector('.falling-container').addEventListener('click', increaseScore);
+
+    function showProfileImage() {
+      profileImage.style.display = 'block';
+      profileImage.style.opacity = 1;
+      showImageButton.style.display = 'none';
+    }
+
+    function hideProfileImage() {
+      profileImage.style.opacity = 0;
+      setTimeout(() => {
+        profileImage.style.display = 'none';
+        showImageButton.style.display = 'block';
+      }, 500);
+    }
+
+    function openImage() {
+      window.open(profileImage.src, '_blank');
+    }
+    profileImage.addEventListener('click', openImage);
+  </script>
+</body>
+
+</html>

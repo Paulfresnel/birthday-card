@@ -1,0 +1,363 @@
+body {
+    font-family: "Quicksand", sans-serif;
+    background: url("https://img.freepik.com/free-vector/realistic-black-background-with-golden-textures_23-2149159190.jpg?w=1800&t=st=1705436831~exp=1705437431~hmac=f75d37d5f5fb9842f34a6aed26a314e09a0167c852e545d03ccfacbcee450870")
+      center/cover;
+  }
+  
+  .body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+  }
+  
+  h2 {
+    font-size: 5em;
+    font-family: "Great Vibes", cursive;
+    font-weight: bold;
+    animation: 1s blink linear infinite;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .birthdayCard {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: 1s;
+  }
+  
+  .cardFront {
+    position: relative;
+    background-color: #fff;
+    width: 250px;
+    height: 350px;
+    overflow: hidden;
+    transform-origin: left;
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
+      30px 0 50px rgba(0, 0, 0, 0.4);
+    transition: 0.6s;
+  }
+  
+  .happy {
+    font-family: "Quicksand", sans-serif;
+    text-align: center;
+    margin: 30px;
+    font-size: 2.2em;
+    transition: 0.1s;
+    -webkit-text-stroke: 2px #000;
+    color: #fff;
+  }
+  
+  .balloons {
+    position: absolute;
+  }
+  
+  .balloonOne,
+  .balloonTwo,
+  .balloonThree,
+  .balloonFour {
+    position: absolute;
+    width: 85px;
+    height: 95px;
+    border-radius: 50%;
+  }
+  
+  .balloonOne {
+    background-color: rgba(0, 0, 0, 0.7);
+    left: -10px;
+    top: 50px;
+  }
+  
+  .balloonTwo {
+    background-color: rgba(255, 223, 0, 0.5);
+    left: 50px;
+    top: 20px;
+  }
+  
+  .balloonThree {
+    background-color: rgba(0, 0, 0, 0.5);
+    left: 110px;
+    top: 50px;
+  }
+  
+  .balloonFour {
+    background-color: rgba(255, 223, 0, 0.7);
+    left: 170px;
+    top: 20px;
+  }
+  
+  .balloonOne:before,
+  .balloonTwo:before,
+  .balloonThree:before,
+  .balloonFour:before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 155px;
+    background-color: #ffd166;
+    top: 95px;
+    left: 43px;
+  }
+  
+  .balloonOne:after,
+  .balloonTwo:after,
+  .balloonThree:after,
+  .balloonFour:after {
+    content: "";
+    position: absolute;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    top: 94px;
+    left: 37px;
+  }
+  
+  .balloonOne:after {
+    border-bottom: 10px solid rgba(0, 0, 0, 0.7);
+  }
+  
+  .balloonTwo:after {
+    border-bottom: 10px solid rgba(255, 223, 0, 0.7);
+  }
+  
+  .balloonThree:after {
+    border-bottom: 10px solid rgba(0, 0, 0, 0.7);
+  }
+  
+  .balloonFour:after {
+    border-bottom: 10px solid rgba(255, 223, 0, 0.7);
+  }
+  
+  .cardInside {
+    position: absolute;
+    background-color: #fff;
+    width: 250px;
+    height: 350px;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+  }
+  
+  p {
+    font-family: cursive;
+    margin: 15px 10px 10px 30px;
+    color: #333;
+  }
+  
+  .name {
+    left: 150px;
+    color: #333;
+    text-decoration: underline;
+    position: relative;
+  }
+  
+  .back {
+    font-family: Tahoma, sans-serif;
+    color: #333;
+    text-align: center;
+    margin: 30px;
+    outline-color: #333;
+    outline-style: dashed;
+  }
+  
+  .birthdayCard:hover {
+    transform: perspective(2500px) rotate(5deg);
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
+      0 10px 100px rgba(0, 0, 0, 0.5);
+  }
+  
+  .birthdayCard:hover .cardFront {
+    transform: rotateY(-160deg);
+  }
+  
+  .birthdayCard:hover .happy {
+    visibility: hidden;
+  }
+  
+  @keyframes blink {
+    0% {
+      color: white;
+    }
+  
+    20% {
+      color: rgba(255, 223, 0, 0.5);
+    }
+  
+    40% {
+      color: black;
+    }
+  
+    60% {
+      color: Gold;
+    }
+  
+    80% {
+      color: Black;
+    }
+  
+    100% {
+      color: Gold;
+    }
+  }
+  .profileImage {
+    display: none;
+    max-width: 100px;
+    max-height: 70px;
+    position: absolute;
+    top: 120%;
+    left: -45%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s ease-in-out;
+  }
+  .name button {
+    position: absolute;
+    top: 80%;
+    left: -65%;
+    transform: translateY(-50%);
+    background: linear-gradient(45deg, #ffd700, #ffd166);
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .name button:hover {
+    background: linear-gradient(45deg, #ffd166, #ffd700);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .falling-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 999;
+  }
+  
+  .falling-element {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+/*     background-color: ;
+ */    border-radius: 50%;
+    animation: fall 7s ease-out infinite;
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+  }
+  
+  .confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+  }
+  
+  @keyframes bounceText {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+  
+  .confetti {
+    width: 10px;
+    height: 20px;
+    background-color: transparent;
+    position: absolute;
+    will-change: transform, background-color;
+    animation: fall 3s ease-out infinite;
+    filter: none;
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    100% {
+      transform: translateY(500px) translateY(calc(100vh + 100px)) rotate(720deg);
+    }
+  }
+  
+  .start-game-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .kiss-icon {
+    max-width: 100px;
+    max-height: 40px;
+    margin-left: 160px;
+    margin-top: -10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .start-game-button:hover .kiss-icon {
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .falling-element.kiss {
+    background-image: url(https://png2.cleanpng.com/sh/9cb30c77d60e119a457d54418ea7382a/L0KzQYi4UcI4N5c8T5GAYUHlcbS9UcdibmQ6TpCDMkC0QomCUcE2OWI8TqU5NEG4QIS9TwBvbz==/5a1bac617af356.8201289115117630415036.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .falling-element.heart {
+    background-image: url(https://png2.cleanpng.com/sh/dd2a7ca3abab01ba076186770d6eef77/L0KzQYi4UcI5N5Y2TZGAYUHnRrLtVsUxOJU7UJCBMkO2QIa3V8E2OWI9T6k8Nka2QoiCTwBvbz==/5a1d6af6500d68.6233050715118773663279.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .score {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    color: Black;
+    font-weight: bold;
+  }
+  
+  .catcher {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-image: url("https://png2.cleanpng.com/sh/fc068de8a60d2fc44363c3eae54ba9c1/L0KzQYi4UcI4N2FoSpGAYUHmdbO5WPVna2YATpCANEa3RYO7UME2OWI9TKYBNEi8SIO4TwBvbz==/5a1ceb28efc596.5464524015118446489821.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 999;
+  }
+  
